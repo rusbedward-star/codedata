@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Deng/.claude/plans/**)",
+      "Bash(curl -X POST http://127.0.0.1:8000/api/forecast-jobs/ -H \"Content-Type: application/json\")",
+      "Bash(curl http://127.0.0.1:8000/api/forecast-jobs/ad5710db-ee74-475f-b9ab-d184327fd72c/)",
+      "Bash(python -c \"import torch; import sklearn; import matplotlib; import pandas; import statsmodels; print\\('所有依赖已安装成功'\\)\")",
+      "Bash(python monthly_sales_forecast.py)",
+      "Read(//tmp/**)",
+      "Bash(python -)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Deng\\.claude\\plans"
+    ]
+  }
+}

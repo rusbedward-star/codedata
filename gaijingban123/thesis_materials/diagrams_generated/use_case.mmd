@@ -1,0 +1,20 @@
+flowchart LR
+    User([系统用户])
+
+    subgraph System[冰柠销量分析与预测系统]
+        UC1((查看系统首页))
+        UC2((查看样本数据))
+        UC3((查看模型评估结果))
+        UC4((切换预测模型))
+        UC5((查看未来预测结果))
+        UC6((查看可视化图表))
+        UC7((查看系统设计信息))
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7

@@ -1,0 +1,25 @@
+{
+  "name": "yunnan-sales-frontend",
+  "version": "1.0.0",
+  "description": "销售数据分析预测系统前端",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "^3.4.0",
+    "vue-router": "^4.3.0",
+    "vuex": "^4.1.0",
+    "axios": "^1.7.0",
+    "element-plus": "^2.7.0",
+    "@element-plus/icons-vue": "^2.3.0",
+    "echarts": "^5.5.0",
+    "vue-echarts": "^7.0.0",
+    "dayjs": "^1.11.0"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^5.0.8",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@babel/core": "^7.24.0"
+  }
+}

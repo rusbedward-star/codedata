@@ -1,0 +1,21 @@
+sequenceDiagram
+    actor User as 用户
+    participant Page as Vue页面
+    participant API as 接口服务
+    participant Controller as Django控制器
+    participant DataService as 数据文件服务
+    participant ChartService as 图表服务
+
+    User->>Page: 选择模型
+    Page->>API: 请求模型详情和图表
+    API->>Controller: GET /api/model-detail
+    Controller->>DataService: 读取模型评估结果和预测结果
+    DataService-->>Controller: 返回模型数据
+    Controller-->>API: 返回JSON结果
+    API-->>Page: 渲染表格和数值
+
+    Page->>Controller: GET /api/charts/model-forecast
+    Controller->>ChartService: 构建指定模型折线图
+    ChartService-->>Controller: 返回HTML图表
+    Controller-->>Page: 返回Pyecharts图表页面
+    Page-->>User: 展示预测图

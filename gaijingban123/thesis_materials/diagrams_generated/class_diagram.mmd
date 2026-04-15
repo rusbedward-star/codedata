@@ -1,0 +1,65 @@
+classDiagram
+    class FrontendView["前端视图"] {
+        +渲染首页()
+        +渲染评估页()
+        +渲染预测页()
+        +渲染图表页()
+    }
+
+    class ApiService["接口服务"] {
+        +获取概览数据()
+        +获取评估结果()
+        +获取预测结果()
+        +获取模型详情()
+        +获取图表数据()
+    }
+
+    class DashboardController["控制器"] {
+        +系统概览()
+        +模型评估()
+        +预测结果()
+        +模型详情()
+        +图表视图()
+    }
+
+    class CsvDataService["数据文件服务"] {
+        +读取销售数据()
+        +读取评估结果()
+        +读取预测结果()
+    }
+
+    class ChartService["图表服务"] {
+        +构建指标图()
+        +构建预测图()
+        +构建趋势图()
+    }
+
+    class SalesDataRecord["销售数据实体"] {
+        +日期
+        +销量
+        +区域
+        +产品系列
+    }
+
+    class ModelMetric["模型指标实体"] {
+        +模型名称
+        +MAE
+        +RMSE
+        +MAPE
+    }
+
+    class ForecastResult["预测结果实体"] {
+        +月份
+        +模型名称
+        +预测值
+    }
+
+    FrontendView --> ApiService
+    ApiService --> DashboardController
+    DashboardController --> CsvDataService
+    DashboardController --> ChartService
+    CsvDataService --> SalesDataRecord
+    CsvDataService --> ModelMetric
+    CsvDataService --> ForecastResult
+    ChartService --> ModelMetric
+    ChartService --> ForecastResult
